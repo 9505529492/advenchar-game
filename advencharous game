@@ -1,0 +1,54 @@
+import time
+
+def intro():
+    print("Welcome to the Text-Based Adventure Game!")
+    print("You find yourself in a mysterious forest. You can go left or right.")
+    time.sleep(1)
+    choice = input("Which way do you choose? (left/right): ").lower()
+    if choice == "left":
+        left_path()
+    elif choice == "right":
+        right_path()
+    else:
+        print("Invalid choice. Please enter 'left' or 'right'.")
+        intro()
+
+def left_path():
+    print("You venture deeper into the forest and find a hidden cave.")
+    time.sleep(1)
+    choice = input("Enter the cave or continue exploring the forest? (cave/continue): ").lower()
+    if choice == "cave":
+        print("You enter the cave and discover a treasure chest. Congratulations, you win!")
+    elif choice == "continue":
+        print("You continue exploring and get lost in the forest. Game Over.")
+    else:
+        print("Invalid choice. Please enter 'cave' or 'continue'.")
+        left_path()
+
+def right_path():
+    print("You head down the right path and come across a river.")
+    time.sleep(1)
+    choice = input("Swim across the river or build a raft? (swim/raft): ").lower()
+    if choice == "swim":
+        print("You try to swim across the river but get swept away by the current. Game Over.")
+    elif choice == "raft":
+        print("You build a raft and safely cross the river. You continue your adventure.")
+        more_choices()
+    else:
+        print("Invalid choice. Please enter 'swim' or 'raft'.")
+        right_path()
+
+def more_choices():
+    print("You encounter a dragon in a clearing. It's guarding a treasure.")
+    time.sleep(1)
+    choice = input("Fight the dragon or sneak past it? (fight/sneak): ").lower()
+    if choice == "fight":
+        print("You bravely fight the dragon and defeat it. You claim the treasure and win the game!")
+    elif choice == "sneak":
+        print("You try to sneak past the dragon, but it spots you. Game Over.")
+    else:
+        print("Invalid choice. Please enter 'fight' or 'sneak'.")
+        more_choices()
+
+# Start the game
+intro()
